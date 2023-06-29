@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  frontend-learning:
+    image: caddy:latest
+    restart: always
+    volumes:
+      - ./projects:/usr/share/caddy
+    labels:
+      - traefik.http.routers.frontend-learning.rule=Host(`frontend-learning.melaine-gerard.fr`)
+      - traefik.http.routers.frontend-learning.tls=true
+      - traefik.http.routers.frontend-learning.tls.certresolver=lets-encrypt
+      - traefik.port=80
+      - "traefik.enable=true"
+    networks:
+      - local
+
+networks:
+  local:
+    external: true
