@@ -7,3 +7,5 @@ Pour installer l'environnement de démonstration, il faut suivre les étapes sui
 2. Lancer le container Docker
 
 ## Sommaire des projets
+
+- [Projet 1: Page de connexion - Inspiré de la maquette par Corey Daniels](./projects/desktop-login-page/README.md)
