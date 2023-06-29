@@ -85,6 +85,12 @@ body {
 .bg-dodgerblue {
     background: #1066b3;
     color: white;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.bg-dodgerblue:hover {
+    background: #014480;
 }
 
 .form-button {
