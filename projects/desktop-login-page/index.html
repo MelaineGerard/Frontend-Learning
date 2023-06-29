@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desktop Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid grid-cols-3 bg-red">
+    <div class="col-span-1 bg-dark-blue flex flex-column justify-content-center">
+        <img src="infinite.svg" alt="Logo Infini" class="w-128 flex align-self-center">
+        <h1 class="color-white text-center">Infinite</h1>
+    </div>
+    <div class="col-span-2 bg-light-gray flex flex-column justify-content-center">
+        <div class="card">
+            <div class="text-small text-muted mt-4 mb-3">
+                Welcome to infinite
+            </div>
+            <h1>Log into your account</h1>
+            <form action="#">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="site-token">Site Token</label>
+                    <input type="password" id="site-token" name="site-token">
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="bg-dodgerblue button">
+                        Log In
+                    </button>
+                </div>
+            </form>
+            <div class="text-right text-muted text-small mt-4">
+                Inspired by the model by <a href="https://dribbble.com/shots/7391531-Evolve-Desktop-Login-Page" target="_blank">Corey Daniels</a>
+            </div>
+            <div class="text-muted text-small mt-4">
+                <a href="..">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

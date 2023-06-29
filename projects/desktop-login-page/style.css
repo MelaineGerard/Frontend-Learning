@@ -1,0 +1,144 @@
+@import url(https://fonts.bunny.net/css?family=montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1438382458652-54431bf59e01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80");
+    background-size: cover;
+}
+
+body {
+    background: rgba(109, 109, 109, 0.7);
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+}
+
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    height: 100%;
+}
+
+.col-span-1 {
+    border-radius: 25px 0 0 25px;
+}
+
+.col-span-2 {
+    grid-column: span 2;
+    border-radius: 0 25px 25px 0;
+}
+
+.bg-dark-blue {
+    background: #000053;
+}
+
+.bg-light-gray {
+    background: #bababa;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.color-white {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.w-128 {
+    width: 128px;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+   align-items: center;
+}
+
+.bg-dodgerblue {
+    background: #1066b3;
+    color: white;
+}
+
+.form-button {
+    margin: 2rem 2.5rem 0 0.5rem;
+}
+
+.button {
+    border: none;
+    width: 75px;
+    height: 32px;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.text-small {
+    font-size: 0.7rem;
+}
+
+.text-muted {
+    color: grey;
+}
+
+.card h1 {
+    font-size: 2.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.form-group > input {
+    font-size: 1.5rem;
+    border: solid 1px #b7b7b7;
+    outline: none;
+    border-radius: 2px;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.text-right {
+    text-align: right;
+}
