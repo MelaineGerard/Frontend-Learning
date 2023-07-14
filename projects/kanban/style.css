@@ -1,0 +1,106 @@
+@import url(https://fonts.bunny.net/css?family=montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: rgba(243, 244, 246, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.kanban {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.column {
+    background: #CED2D8;
+    border-radius: 1rem;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.column-title {
+    background: #9CA3AF;
+    border-radius: 1rem 1rem 0 0;
+    color: white;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    margin: 10px;
+}
+
+.card .icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+    gap: 5px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.card .icons .icon {
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+
+.card img {
+    border-radius: 50%;
+    background: #949494;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.user-with-ticket {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+}
+
+.user-with-ticket .ticket-number {
+    align-self: center;
+}
+
+.type {
+    background: dodgerblue;
+    color: white;
+}
+
+.priority {
+    background: #ededed;
+}
+
+.story-points {
+    background: #9CA3AF;
+    color: white;
+}
+
+.epic {
+    background: #FDE68A;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    margin: 0.75rem 0;
+}
+
