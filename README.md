@@ -9,3 +9,4 @@ Pour installer l'environnement de démonstration, il faut suivre les étapes sui
 ## Sommaire des projets
 
 - [Projet 1: Page de connexion - Inspiré de la maquette par Corey Daniels](./projects/desktop-login-page/README.md)
+- [Projet 2: Tableau kanban](./projects/kanban/README.md)
