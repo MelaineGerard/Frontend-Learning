@@ -1,0 +1,45 @@
+stages:
+  - build
+  - deploy
+
+docker-build:
+  image: docker:cli
+  stage: build
+  services:
+    - docker:dind
+  variables:
+    DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --pull -t "$DOCKER_IMAGE_NAME" -f ./docker/Dockerfile .
+    - docker push "$DOCKER_IMAGE_NAME"
+  only:
+    - tags
+
+deploy:
+  image: ubuntu:22.04
+  stage: deploy
+  variables:
+    REPOSITORY_NAME: "frontend-learning-k3s"
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - mkdir -p /root/.ssh
+    - cat "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+    - echo "\n" >> /root/.ssh/id_rsa
+    - chmod 600 /root/.ssh/id_rsa
+    - ssh-keyscan -H gitlab.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - eval $(ssh-agent -s)
+    - git config --global user.email "gitlab-ci@gmail.com"
+    - git config --global user.name "gitlab-ci"
+    - git clone git@gitlab.com:melaine-gerard-k3s/${REPOSITORY_NAME}.git
+    - cd ${REPOSITORY_NAME}
+    - ls -latr
+  script:
+    - "sed -i \"s/tag: .*/tag: \"${CI_COMMIT_REF_SLUG}\"/g\" values.yaml"
+    - git add values.yaml
+    - git commit -am "Update Image tag - Version ${CI_COMMIT_REF_SLUG}"
+    - git push
+  only:
+    - tags
